@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آکادمی ژرفا - مسیر روشن آینده شما</title>
+    <link rel="icon" href="https://via.placeholder.com/32/007bff/ffffff?text=Z" type="image/x-icon">
+
+    <!-- Font Awesome for Icons (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* General Styles */
+        :root {
+            --primary-color: #007bff; /* A vibrant blue */
+            --secondary-color: #6c757d; /* Muted gray */
+            --accent-color: #28a745; /* Green for success/action */
+            --background-light: #f8f9fa; /* Light background */
+            --text-dark: #343a40; /* Dark text */
+            --text-light: #ffffff; /* Light text */
+            --border-color: #dee2e6; /* Light border */
+            --font-family-main: 'Vazirmatn', sans-serif;
+            --font-family-heading: 'Lalezar', cursive;
+
+            /* Animation Variables */
+            --animation-duration: 0.8s;
+            --animation-delay-base: 0.1s;
+        }
+
+        body {
+            font-family: var(--font-family-main);
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            direction: rtl;
+            text-align: right;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-heading);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        h1 { font-size: 4.5rem; }
+        h2 { font-size: 3rem; }
+        h3 { font-size: 2rem; }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            font-weight: bold;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+        }
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
+        }
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            box-shadow: none;
+        }
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        section {
+            padding: 5rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-heading h2 {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            font-size: 2.8rem;
+        }
+        .section-heading h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50%;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+        .section-heading p {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0.5rem auto 0;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--text-light);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .header.scrolled {
+            padding: 0.7rem 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: var(--font-family-heading);
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        .logo span {
+            color: var(--accent-color);
+        }
+        .main-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .main-nav ul li {
+            margin-right: 1.8rem;
+        }
+        .main-nav ul li a {
+            color: var(--text-dark);
+            font-weight: bold;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+        .main-nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        .main-nav ul li a:hover::after {
+            width: 100%;
+        }
+        .main-nav ul li a:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        .header-actions .btn {
+            margin-right: 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://via.placeholder.com/1920x1080/007bff/ffffff?text=Zharfa+Academy') no-repeat center center/cover;
+            color: var(--text-light);
+            text-align: center;
+            padding: 10rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 80vh;
+            perspective: 1px; /* For 3D transform context */
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.65); /* Darker overlay */
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+        }
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+        .hero p {
+            font-size: 1.8rem;
+            margin-bottom: 2.5rem;
+        }
+        .hero .btn {
+            margin: 0 0.8rem;
+            font-size: 1.1rem;
+            padding: 1rem 2.2rem;
+        }
+
+        /* Parallax Effect for Hero */
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://via.placeholder.com/1920x1080/007bff/ffffff?text=Zharfa+Academy') no-repeat center center/cover;
+            z-index: -1;
+            transform: translateZ(-1px) scale(1.5); /* Adjust scale for desired effect */
+            will-change: transform;
+        }
+
+        /* Features/Advantages Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        .feature-card {
+            background-color: var(--text-light);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        .feature-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        .feature-card .icon {
+            font-size: 4rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .feature-card:hover .icon {
+            color: var(--primary-color);
+            transform: scale(1.1);
+        }
+        .feature-card h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .feature-card p {
+            color: var(--secondary-color);
+            font-size: 1.05rem;
+        }
+
+        /* Courses Section */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        .course-card {
+            background-color: var(--text-light);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        .course-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        .course-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .course-card:hover img {
+            transform: scale(1.05);
+        }
+        .course-content {
+            padding: 2rem;
+        }
+        .course-content h3 {
+            font-size: 1.7rem;
+            margin-bottom: 0.8rem;
+        }
+        .course-content p {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.2rem;
+        }
+        .course-content .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+        .course-content .btn {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            font-size: 1rem;
+        }
+
+        /* Counters Section */
+        .counters-section {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .counters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .counter-item {
+            padding: 1.5rem;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .counter-item .count {
+            font-family: var(--font-family-heading);
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+        .counter-item .label {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 5rem 0;
+            text-align: center;
+        }
+        .testimonial-slider {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 0 3rem; /* Space for arrows */
+        }
+        .testimonial-slide {
+            display: none; /* Hidden by default */
+            padding: 2.5rem;
+            background-color: rgba(255,255,255,0.15);
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            animation: fadeIn 0.8s ease-out forwards; /* Added fade-in for slide transition */
+        }
+        .testimonial-slide.active {
+            display: block;
+        }
+        .testimonial-slide img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 4px solid var(--accent-color);
+            box-shadow: 0 0 0 5px rgba(255,255,255,0.2);
+        }
+        .testimonial-slide p {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        .testimonial-slide .author {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+        }
+        .slider-dots {
+            margin-top: 2.5rem;
+        }
+        .dot {
+            height: 14px;
+            width: 14px;
+            margin: 0 6px;
+            background-color: rgba(255,255,255,0.4);
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+        .dot.active {
+            background-color: var(--text-light);
+            transform: scale(1.2);
+        }
+        .slider-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255,255,255,0.25);
+            color: var(--text-light);
+            border: none;
+            padding: 1rem 0.8rem;
+            cursor: pointer;
+            font-size: 1.8rem;
+            border-radius: 50%;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .slider-nav-btn:hover {
+            background-color: rgba(255,255,255,0.4);
+            transform: translateY(-50%) scale(1.1);
+        }
+        .prev-slide {
+            right: 0;
+        }
+        .next-slide {
+            left: 0;
+        }
+
+        /* Instructors Section */
+        .instructors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            text-align: center;
+        }
+        .instructor-card {
+            background-color: var(--text-light);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        .instructor-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        .instructor-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 4px solid var(--primary-color);
+            box-shadow: 0 0 0 5px rgba(0,123,255,0.1);
+            transition: transform 0.3s ease;
+        }
+        .instructor-card:hover img {
+            transform: scale(1.05);
+        }
+        .instructor-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+        .instructor-card .role {
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .instructor-card p {
+            color: var(--secondary-color);
+            font-size: 0.95rem;
+        }
+
+        /* Latest Articles Section */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        .article-card {
+            background-color: var(--text-light);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        .article-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        .article-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .article-card:hover img {
+            transform: scale(1.05);
+        }
+        .article-content {
+            padding: 2rem;
+        }
+        .article-content h3 {
+            font-size: 1.7rem;
+            margin-bottom: 0.8rem;
+        }
+        .article-content p {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.2rem;
+        }
+        .article-content .btn {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            font-size: 1rem;
+        }
+
+        /* FAQ Section */
+        .faq-accordion {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .accordion-item {
+            background-color: var(--text-light);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            margin-bottom: 1.2rem;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s ease;
+        }
+        .accordion-item:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .accordion-header {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            transition: background-color 0.3s ease;
+            font-size: 1.15rem;
+        }
+        .accordion-header:hover {
+            background-color: var(--background-light);
+        }
+        .accordion-header .icon {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+        .accordion-item.active .accordion-header .icon {
+            transform: rotate(180deg);
+        }
+        .accordion-content {
+            padding: 0 2rem 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            color: var(--secondary-color);
+            font-size: 1rem;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 300px; /* Adjust as needed */
+            padding: 0 2rem 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        .contact-info {
+            background-color: var(--text-light);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+        }
+        .contact-info h3 {
+            margin-bottom: 1.8rem;
+            font-size: 1.8rem;
+        }
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+        }
+        .contact-info ul li {
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            color: var(--secondary-color);
+            font-size: 1.05rem;
+        }
+        .contact-info ul li .icon {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-left: 1.2rem;
+            width: 30px; /* Fixed width for alignment */
+            text-align: center;
+        }
+        .contact-info .social-links {
+            list-style: none;
+            padding: 0;
+            margin-top: 2.5rem;
+            display: flex;
+            justify-content: flex-start;
+        }
+        .contact-info .social-links li {
+            margin: 0 0.8rem;
+        }
+        .contact-info .social-links li a {
+            color: var(--primary-color);
+            font-size: 2rem;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+        .contact-info .social-links li a:hover {
+            color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        .contact-form {
+            background-color: var(--text-light);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+        }
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.8rem;
+        }
+        .contact-form .form-group {
+            margin-bottom: 1.8rem;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-weight: bold;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form input[type="tel"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            font-family: var(--font-family-main);
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .contact-form input[type="text"]:focus,
+        .contact-form input[type="email"]:focus,
+        .contact-form input[type="tel"]:focus,
+        .contact-form textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+        }
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        .contact-form .btn {
+            width: auto;
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--text-dark);
+            color: var(--text-light);
+            padding: 3.5rem 0;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+        .footer .social-links {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+        .footer .social-links li {
+            margin: 0 1rem;
+        }
+        .footer .social-links li a {
+            color: var(--text-light);
+            font-size: 1.8rem;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+        .footer .social-links li a:hover {
+            color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        .footer .footer-nav ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .footer .footer-nav ul li {
+            margin: 0 1.2rem 0.8rem;
+        }
+        .footer .footer-nav ul li a {
+            color: var(--text-light);
+            font-weight: normal;
+            transition: color 0.3s ease;
+        }
+        .footer .footer-nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        .footer .copyright {
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Back to Top Button */
+        #back-to-top {
+            display: none; /* Hidden by default */
+            position: fixed;
+            bottom: 30px;
+            left: 30px; /* Position on the left for RTL */
+            z-index: 999;
+            font-size: 1.8rem;
+            border: none;
+            outline: none;
+            background-color: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            padding: 15px 20px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        #back-to-top:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-8px);
+        }
+
+        /* Modal Styles (for Reservation Form) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1001; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal-content {
+            background-color: var(--background-light);
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            animation: zoomIn 0.3s ease-out;
+        }
+
+        .close-button {
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: var(--primary-color);
+        }
+        .modal-content h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        .modal-content .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .modal-content .btn {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px); /* Default for fadeInUp */
+            transition: opacity var(--animation-duration) ease-out, transform var(--animation-duration) ease-out;
+        }
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .animate-on-scroll[data-animation="zoom-in"].animated {
+            transform: scale(1);
+            opacity: 1;
+        }
+        .animate-on-scroll[data-animation="zoom-in"] {
+            transform: scale(0.8);
+        }
+        .animate-on-scroll[data-animation="slide-in-left"].animated {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        .animate-on-scroll[data-animation="slide-in-left"] {
+            transform: translateX(-50px);
+        }
+        .animate-on-scroll[data-animation="slide-in-right"].animated {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        .animate-on-scroll[data-animation="slide-in-right"] {
+            transform: translateX(50px);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            h1 { font-size: 3.8rem; }
+            h2 { font-size: 2.5rem; }
+            h3 { font-size: 1.8rem; }
+            .hero { padding: 8rem 0; min-height: 70vh; }
+            .hero h1 { font-size: 4rem; }
+            .hero p { font-size: 1.5rem; }
+            .main-nav { display: none; } /* Hide nav on smaller screens, can add a hamburger menu */
+            .header .container { justify-content: center; } /* Center logo if nav is hidden */
+            .header-actions { display: none; } /* Hide actions on smaller screens */
+            .section-heading h2 { font-size: 2.2rem; }
+            .testimonial-slider { padding: 0 1rem; }
+            .slider-nav-btn { font-size: 1.5rem; width: 40px; height: 40px; }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.2rem; }
+            h3 { font-size: 1.6rem; }
+            section { padding: 4rem 0; }
+            .hero { padding: 6rem 0; min-height: 60vh; }
+            .hero h1 { font-size: 3.2rem; }
+            .hero p { font-size: 1.2rem; }
+            .hero .btn { padding: 0.8rem 1.5rem; font-size: 1rem; }
+            .features-grid, .courses-grid, .articles-grid, .contact-grid, .counters-grid, .instructors-grid {
+                grid-template-columns: 1fr;
+            }
+            .feature-card, .course-card, .article-card, .contact-info, .contact-form, .instructor-card, .counter-item {
+                padding: 1.8rem;
+            }
+            .accordion-header { padding: 1.2rem 1.5rem; font-size: 1.05rem; }
+            .accordion-content { padding: 0 1.5rem 1.2rem; }
+            .footer .social-links, .footer .footer-nav ul { flex-direction: column; }
+            .footer .social-links li, .footer .footer-nav ul li { margin-bottom: 0.5rem; }
+            .modal-content { padding: 20px; }
+            .close-button { font-size: 2rem; top: 5px; left: 15px; }
+            #back-to-top { bottom: 20px; left: 20px; padding: 12px 16px; font-size: 1.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 0 1rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1rem; }
+            .btn { padding: 0.7rem 1.4rem; font-size: 0.9rem; }
+            .logo { font-size: 1.8rem; }
+            .section-heading h2 { font-size: 1.8rem; }
+            .section-heading p { font-size: 0.95rem; }
+            .testimonial-slide p { font-size: 1.1rem; }
+            .testimonial-slide img { width: 100px; height: 100px; }
+            .instructor-card img { width: 120px; height: 120px; }
+            .counter-item .count { font-size: 3rem; }
+            .counter-item .label { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="main-header">
+        <div class="container">
+            <a href="#" class="logo">آکادمی <span>ژرفا</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#hero">خانه</a></li>
+                    <li><a href="#features">چرا ژرفا؟</a></li>
+                    <li><a href="#courses">دوره‌ها</a></li>
+                    <li><a href="#instructors">مدرسین</a></li>
+                    <li><a href="#articles">مطالب آموزشی</a></li>
+                    <li><a href="#faq">سوالات متداول</a></li>
+                    <li><a href="#contact">تماس با ما</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn" id="openReservationModal">رزرو مشاوره</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="parallax-bg"></div>
+        <div class="hero-content">
+            <h1 class="animate-on-scroll" data-animation="fade-in-up" data-delay="0.1s">مسیر روشن آینده شما با آکادمی ژرفا</h1>
+            <p class="animate-on-scroll" data-animation="fade-in-up" data-delay="0.3s">با برنامه‌ریزی دقیق، پیگیری مستمر و راهنمایی تخصصی، به اهداف تحصیلی خود دست یابید.</p>
+            <div class="hero-actions">
+                <a href="#courses" class="btn animate-on-scroll" data-animation="fade-in-up" data-delay="0.5s">مشاهده دوره‌ها</a>
+                <a href="#articles" class="btn btn-outline animate-on-scroll" data-animation="fade-in-up" data-delay="0.7s">مطالب آموزشی</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Zharfa? / Features Section -->
+    <section id="features">
+        <div class="container">
+            <div class="section-heading animate-on-scroll" data-animation="fade-in-up">
+                <h2>چرا آکادمی ژرفا؟</h2>
+                <p>ما با رویکردی جامع و شخصی‌سازی شده، شما را در مسیر موفقیت تحصیلی همراهی می‌کنیم.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll" data-animation="zoom-in" data-delay="0.1s">
+                    <i class="fas fa-calendar-check icon"></i>
+                    <h3>برنامه‌ریزی شخصی‌سازی شده</h3>
+                    <p>برنامه‌های درسی متناسب با توانایی‌ها، شرایط و اهداف شما.</p>
+                </div>
+                <div class="feature-card animate-on-scroll" data-animation="zoom-in" data-delay="0.2s">
+                    <i class="fas fa-chart-line icon"></i>
+                    <h3>پیگیری و کنترل منظم</h3>
+                    <p>بررسی مداوم پیشرفت، شناسایی نقاط قوت و ضعف و ارائه راهکارهای بهینه.</p>
+                </div>
+                <div class="feature-card animate-on-scroll" data-animation="zoom-in" data-delay="0.3s">
+                    <i class="fas fa-book-reader icon"></i>
+                    <h3>آموزش روش‌های مطالعه</h3>
+                    <p>یادگیری تکنیک‌های صحیح مطالعه، تست‌زنی و خلاصه‌نویسی.</p>
+                </div>
+                <div class="feature-card animate-on-scroll" data-animation="zoom-in" data-delay="0.4s">
+                    <i class="fas fa-heartbeat icon"></i>
+                    <h3>مدیریت روحیه و انگیزه</h3>
+                    <p>حمایت روانی و ایجاد انگیزه برای غلبه بر خستگی و استرس.</p>
+                </div>
+                <div class="feature-card animate-on-scroll" data-animation="zoom-in" data-delay="0.5s">
+                    <i class="fas fa-graduation-cap icon"></i>
+                    <h3>راهنمایی انتخاب رشته</h3>
+                    <p>مشاوره تخصصی برای انتخاب بهترین مسیر تحصیلی و شغلی.</p>
+                </div>
+                <div class="feature-card animate-on-scroll" data-animation="zoom-in" data-delay="0.6s">
+                    <i class="fas fa-users icon"></i>
+                    <h3>ارتباط مستمر با مشاور</h3>
+                    <p>دسترسی آسان و همیشگی به مشاور تخصصی خود.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses">
+        <div class="container">
+            <div class="section-heading animate-on-scroll" data-animation="fade-in-up">
+                <h2>دوره‌های مشاوره ما</h2>
+                <p>طرح‌های متنوع مشاوره برای نیازهای مختلف دانش‌آموزان.</p>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card animate-on-scroll" data-animation="fade-in-up" data-delay="0.1s">
+                    <img src="https://via.placeholder.com/400x220/007bff/ffffff?text=Course+1" alt="طرح پایه">
+                    <div class="course-content">
+                        <h3>طرح پایه (طرح 1)</h3>
+                        <p>شامل برنامه‌ریزی شخصی، تماس‌های مشاوره و گزارش کار شبانه.</p>
+                        <div class="price">شروع از <span>X</span> تومان</div>
+                        <a href="#" class="btn">جزئیات بیشتر</a>
+                    </div>
+                </div>
+                <div class="course-card animate-on-scroll" data-animation="fade-in-up" data-delay="0.2s">
+                    <img src="https://via.placeholder.com/400x220/28a745/ffffff?text=Course+2" alt="طرح پیشرفته">
+                    <div class="course-content">
+                        <h3>طرح پیشرفته (طرح 2)</h3>
+                        <p>علاوه بر طرح پایه، شامل کنترل خواب، گزارش نیمروزی و آزمون‌های رایگان.</p>
+                        <div class="price">شروع از <span>Y</span> تومان</div>
+                        <a href="#" class="btn">جزئیات بیشتر</a>
+                    </div>
+                </div>
+                <div class="course-card animate-on-scroll" data-animation="fade-in-up" data-delay="0.3s">
+                    <img src="https://via.placeholder.com/400x220/6c757d/ffffff?text=Course+3" alt="طرح جامع">
+                    <div class="course-content">
+                        <h3>طرح جامع (طرح 3)</h3>
+                        <p>کامل‌ترین طرح با پنل شخصی، دسترسی به نمونه سوالات و تماس با والدین.</p>
+                        <div class="price">شروع از <span>Z</span> تومان</div>
+                        <a href="#" class="btn">جزئیات بیشتر</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counters Section -->
+    <section class="counters-section">
+        <div class="container">
+            <div class="section-heading animate-on-scroll" data-animation="fade-in-up">
+                <h2 style="color: var(--text-light);">دستاوردها و آمار</h2>
+                <p style="color: rgba(255,255,255,0.8);">افتخار می‌کنیم که در مسیر موفقیت دانش‌آموزانمان همراه بوده‌ایم.</p>
+            </div>
+            <div class="counters-grid">
+                <div class="counter-item animate-on-scroll" data-animation="zoom-in" data-delay="0.1s">
+                    <div class="count" data-target="1500">0</div>
+                    <div class="label">دانش‌آموز موفق</div>
+                </div>
+                <div class="counter-item animate-on-scroll" data-animation="zoom-in" data-delay="0.2s">
+                    <div class="count" data-target="10">0</div>
+                    <div class="label">سال تجربه</div>
+                </div>
+                <div class="counter-item animate-on-scroll" data-animation="zoom-in" data-delay="0.3s">
+                    <div class="count" data-target="50">0</div>
+                    <div class="label">مشاور متخصص</div>
+                </div>
+                <div class="counter-item animate-on-scroll" data-animation="zoom-in" data-delay="0.4s">
+                    <div class="count" data-target="98">0</div>
+                    <div class="label">درصد رضایت</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-heading animate-on-scroll" data-animation="fade-in-up">
+                <h2 style="color: var(--text-light);">نظرات دانش‌آموزان موفق</h2>
+                <p style="color: rgba(255,255,255,0.8);">تجربیات واقعی دانش‌آموزانی که با ژرفا به موفقیت رسیدند.</p>
+            </div>
+            <div class="testimonial-slider animate-on-scroll" data-animation="zoom-in">
+                <div class="testimonial-slide active">
+                    <img src="https://via.placeholder.com/120/ffffff/007bff?text=A" alt="سارا احمدی">
+                    <p>"مشاوره ژرفا زندگی تحصیلی من را متحول کرد. برنامه‌ریزی دقیق و پیگیری مستمر، رمز موفقیت من بود. از تیم ژرفا بی‌نهایت سپاسگزارم."</p>
+                    <div class="author">سارا احمدی - رتبه برتر کنکور</div>
+                </div>
+                <div class="testimonial-slide">
+                    <img src="https://via.placeholder.com/120/ffffff/28a745?text=B" alt="علی حسینی">
+                    <p>"با کمک مشاوران ژرفا، توانستم استرس کنکور را مدیریت کنم و با انگیزه بیشتری درس بخوانم. حمایت روانی آن‌ها بی‌نظیر بود."</p>
+                    <div class="author">علی حسینی - دانشجوی پزشکی</div>
+                </div>
+                <div class="testimonial-slide">
+                    <img src="https://via.placeholder.com/120/ffffff/6c757d?text=C" alt="فاطمه کریمی">
+                    <p>"انتخاب رشته برایم کابوس بود، اما راهنمایی‌های ژرفا باعث شد بهترین تصمیم را برای آینده‌ام بگیرم و حالا در رشته مورد علاقه‌ام تحصیل می‌کنم."</p>
+                    <div class="author">فاطمه کریمی - دانشجوی مهندسی</div>
+                </div>
+                <div class="testimonial-slide">
+                    <img src="https://via.placeholder.com/120/ffffff/ffc107?text=D" alt="رضا محمدی">
+                    <p>"روش‌های مطالعه‌ای که از ژرفا یاد گرفتم، بازدهی درس خواندنم را چندین برابر کرد. واقعاً از این آکادمی راضی هستم."</p>
+                    <div class="author">رضا محمدی - دانش‌آموز ممتاز</div>
+                </div>
+                <!-- Slider Navigation Arrows -->
+                <button class="slider-nav-btn prev-slide" onclick="plusSlides(-1)"><i class="fas fa-chevron-right"></i></button>
+                <button class="slider-nav-btn next-slide" onclick="plusSlides(1)"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructors Section -->
+    <section id="instructors">
+        <div class="container">
+            <div class="section-heading animate-on-scroll" data-animation="fade-in-up">
+                <h2>مدرسین و مشاورین ما</h2>
+                <p>تیمی از بهترین متخصصین و مشاورین تحصیلی آماده همراهی شما.</p>
+            </div>
+            <div class="instructors-grid">
+                <div class="instructor-card animate-on-scroll" data-animation="zoom-in" data-delay="0.1s">
+                    <img src="https://via.placeholder.com/150/007bff/ffffff?text=M1" alt="دکتر احمدی">
+                    <h3>دکتر احمدی</h3>
+                    <div class="role">مشاور ارشد کنکور</div>
+                    <p>متخصص در برنامه‌ریزی درسی و مدیریت استرس کنکور با بیش از 15 سال تجربه.</p>
+                </div>
+                <div class="instructor-card animate-on-scroll" data-animation="zoom-in" data-delay="0.2s">
+                    <img src="https://via.placeholder.com/150/28a745/ffffff?text=M2" alt="مهندس کریمی">
+                    <h3>مهندس کریمی</h3>
+                    <div class="role">مشاور انتخاب رشته</div>
+                    <p>راهنمای تخصصی در انتخاب رشته‌های دانشگاهی و مسیرهای شغلی آینده.</p>
+                </div>
+                <div class="instructor-card animate-on-scroll" data-animation="zoom-in" data-delay="0.3s">
+                    <img src="https://via.placeholder.com/150/6c757d/ffffff?text=M3" alt="خانم رضایی">
+                    <h3>خانم رضایی</h3>
+                    <div class="role">متخصص روش مطالعه</div>
+                    <p>آموزش تکنیک‌های نوین مطالعه، خلاصه‌نویسی و تست‌زنی برای افزایش بازدهی.</p>
+                </div>
+                <div class="instructor-card animate-on-scroll" data-animation="zoom-in" data-delay="0.4s">
+                    <img src="https://via.placeholder.com/150/ffc107/ffffff?text=M4" alt="آقای حسینی">
+                    <h3>آقای حسینی</h3>
+                    <div class="role">مشاور انگیزشی</div>
+                    <p>ایجاد انگیزه و حمایت روانی برای دانش‌آموزان در طول مسیر تحصیلی.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Articles Section -->
+    <section id="articles">
+        <div class="container">
+            <div class="section-heading animate-on-scroll" data-animation="fade-in-up">
+                <h2>آخرین مطالب آموزشی</h2>
+                <p>جدیدترین مقالات و نکات آموزشی برای موفقیت شما.</p>
+            </div>
+            <div class="articles-grid">
+                <div class="article-card animate-on-scroll" data-animation="fade-in-up" data-delay="0.1s">
+                    <img src="https://via.placeholder.com/400x220/007bff/ffffff?text=Article+1" alt="مقاله 1">
+                    <div class="article-content">
+                        <h3>تکنیک‌های مطالعه فعال برای کنکور</h3>
+                        <p>با این روش‌ها، بازدهی مطالعه خود را چندین برابر کنید و به نتایج بهتری دست یابید.</p>
+                        <a href="#" class="btn btn-outline">ادامه مطلب</a>
+                    </div>
+                </div>
+                <div class="article-card animate-on-scroll" data-animation="fade-in-up" data-delay="0.2s">
+                    <img src="https://via.placeholder.com/400x220/28a745/ffffff?text=Article+2" alt="مقاله 2">
+                    <div class="article-content">
+                        <h3>چگونه استرس امتحانات را کنترل کنیم؟</h3>
+                        <p>راهکارهای عملی برای کاهش اضطراب و افزایش تمرکز در دوران امتحانات و کنکور.</p>
+                        <a href="#" class="btn btn-outline">ادامه مطلب</a>
+                    </div>
+                </div>
+                <div class="article-card animate-on-scroll" data-animation="fade-in-up" data-delay="0.3s">
+                    <img src="https://via.placeholder.com/400x220/6c757d/ffffff?text=Article+3" alt="مقاله 3">
+                    <div class="article-content">
+                        <h3>اهمیت خواب کافی در دوران کنکور</h3>
+                        <p>چرا خواب خوب، به اندازه درس خواندن مهم است و چگونه آن را مدیریت کنیم؟</p>
+                        <a href="#" class="btn btn-outline">ادامه مطلب</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;" class="animate-on-scroll" data-animation="fade-in-up" data-delay="0.4s">
+                <a href="#" class="btn btn-outline">مشاهده همه مطالب</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-heading animate-on-scroll" data-animation="fade-in-up">
+                <h2>سوالات متداول</h2>
+                <p>پاسخ به پرتکرارترین سوالات شما درباره آکادمی ژرفا.</p>
+            </div>
+            <div class="faq-accordion animate-on-scroll" data-animation="fade-in-up" data-delay="0.1s">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>آیا مشاوره به صورت حضوری هم انجام می‌شود؟</span>
+                        <i class="fas fa-chevron-down icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>خیر، تمامی خدمات مشاوره و برنامه‌ریزی آکادمی ژرفا به صورت کاملاً آنلاین و از طریق پلتفرم‌های مجازی انجام می‌شود تا دسترسی برای تمامی دانش‌آموزان در سراسر کشور فراهم باشد. این رویکرد به ما امکان می‌دهد تا بهترین مشاوران را بدون محدودیت جغرافیایی در اختیار شما قرار دهیم.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>چگونه می‌توانم در دوره‌های مشاوره ثبت‌نام کنم؟</span>
+                        <i class="fas fa-chevron-down icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>برای ثبت‌نام، می‌توانید از طریق فرم رزرو مشاوره در همین صفحه (با کلیک بر روی دکمه "رزرو مشاوره" در بالای صفحه) اطلاعات خود را ارسال کنید تا مشاوران ما در اسرع وقت با شما تماس بگیرند و مراحل ثبت‌نام را توضیح دهند. همچنین می‌توانید مستقیماً با شماره تماس‌های ما ارتباط برقرار کنید.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>آیا امکان پرداخت اقساطی هزینه دوره‌ها وجود دارد؟</span>
+                        <i class="fas fa-chevron-down icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>بله، آکادمی ژرفا برای رفاه حال دانش‌آموزان و خانواده‌ها، امکان پرداخت اقساطی هزینه دوره‌های مشاوره را فراهم کرده است. برای اطلاع از شرایط دقیق اقساط و برنامه‌های پرداخت منعطف، لطفاً با بخش پشتیبانی ما تماس بگیرید.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>چه تفاوتی بین طرح‌های مشاوره وجود دارد؟</span>
+                        <i class="fas fa-chevron-down icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>طرح‌های مشاوره ما (پایه، پیشرفته، جامع) از نظر سطح پوشش خدمات و امکانات ارائه شده متفاوت هستند. طرح جامع کامل‌ترین خدمات را شامل می‌شود، از جمله پنل شخصی، دسترسی به نمونه سوالات، ارتباط با والدین و جلسات مشاوره بیشتر. برای مشاهده جزئیات کامل هر طرح، به بخش "دوره‌های مشاوره ما" مراجعه کنید.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>آیا مشاورین ژرفا تجربه کافی دارند؟</span>
+                        <i class="fas fa-chevron-down icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>بله، تمامی مشاورین آکادمی ژرفا دارای مدارک تحصیلی مرتبط و سال‌ها تجربه موفق در زمینه مشاوره تحصیلی و کنکور هستند. ما به صورت دوره‌ای آموزش‌های تخصصی برای تیم خود برگزار می‌کنیم تا همواره با جدیدترین متدهای آموزشی و مشاوره‌ای آشنا باشند.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-heading animate-on-scroll" data-animation="fade-in-up">
+                <h2>تماس با ما</h2>
+                <p>برای رزرو مشاوره یا هرگونه سوال، با ما در ارتباط باشید.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info animate-on-scroll" data-animation="slide-in-right" data-delay="0.1s">
+                    <h3>اطلاعات تماس</h3>
+                    <ul>
+                        <li><i class="fas fa-phone-alt icon"></i> 09913093992</li>
+                        <li><i class="fas fa-envelope icon"></i> yaldahemmatzade@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt icon"></i> ارتباط در شبکه‌های داخلی ایتا و روبیکا</li>
+                    </ul>
+                    <ul class="social-links">
+                        <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#" aria-label="Rubika"><i class="fas fa-comment-dots"></i></a></li> <!-- Placeholder for Rubika -->
+                        <li><a href="#" aria-label="Eitaa"><i class="fas fa-paper-plane"></i></a></li> <!-- Placeholder for Eitaa -->
+                    </ul>
+                </div>
+                <div class="contact-form animate-on-scroll" data-animation="slide-in-left" data-delay="0.2s">
+                    <h3>ارسال پیام</h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">نام و نام خانوادگی:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">شماره تلفن:</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">پیام شما:</label>
+                            <textarea id="message" name="message" rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="btn">ارسال پیام</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <ul class="social-links">
+                <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#" aria-label="Rubika"><i class="fas fa-comment-dots"></i></a></li>
+                <li><a href="#" aria-label="Eitaa"><i class="fas fa-paper-plane"></i></a></li>
+            </ul>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#hero">خانه</a></li>
+                    <li><a href="#courses">دوره‌ها</a></li>
+                    <li><a href="#articles">مطالب آموزشی</a></li>
+                    <li><a href="#faq">سوالات متداول</a></li>
+                    <li><a href="#contact">تماس با ما</a></li>
+                </ul>
+            </nav>
+            <p class="copyright">&copy; طراحی شده توسط شرکت ساینتکس</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="بازگشت به بالا"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Reservation Modal -->
+    <div id="reservationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>رزرو مشاوره رایگان</h3>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="modal-name">نام و نام خانوادگی:</label>
+                    <input type="text" id="modal-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="modal-phone">شماره تلفن:</label>
+                    <input type="tel" id="modal-phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="modal-message">پیام شما (اختیاری):</label>
+                    <textarea id="modal-message" name="message" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn">ارسال درخواست</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- jQuery (CDN) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Sticky Header
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 50) {
+                    $('#main-header').addClass('scrolled');
+                } else {
+                    $('#main-header').removeClass('scrolled');
+                }
+
+                // Show/Hide Back to Top button
+                if ($(this).scrollTop() > 300) {
+                    $('#back-to-top').fadeIn();
+                } else {
+                    $('#back-to-top').fadeOut();
+                }
+            });
+
+            // Smooth Scrolling for Navigation Links
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.hash);
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - $('#main-header').outerHeight()
+                    }, 800);
+                }
+            });
+
+            // Testimonial Slider
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = $(".testimonial-slide");
+                var dots = $(".dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+
+            // Auto-advance slider
+            var testimonialTimer = setInterval(function() {
+                plusSlides(1);
+            }, 5000); // Change slide every 5 seconds
+
+            // Pause auto-advance on hover
+            $('.testimonial-slider').hover(function() {
+                clearInterval(testimonialTimer);
+            }, function() {
+                testimonialTimer = setInterval(function() {
+                    plusSlides(1);
+                }, 5000);
+            });
+
+            // FAQ Accordion
+            $(".accordion-header").on('click', function() {
+                var $parent = $(this).parent();
+                $parent.toggleClass("active");
+                $parent.find(".accordion-content").slideToggle(300);
+
+                // Close other open accordions
+                $(".accordion-item").not($parent).removeClass("active").find(".accordion-content").slideUp(300);
+            });
+
+            // Back to Top button click
+            $('#back-to-top').on('click', function() {
+                $('html, body').animate({ scrollTop: 0 }, 800);
+            });
+
+            // On-scroll animation (Scroll Reveal)
+            function animateOnScroll() {
+                $('.animate-on-scroll:not(.animated)').each(function() {
+                    var element = $(this);
+                    var animation = element.data('animation') || 'fade-in-up';
+                    var delay = parseFloat(element.data('delay')) || 0;
+
+                    if (element.offset().top < $(window).scrollTop() + $(window).height() - 150) {
+                        setTimeout(function() {
+                            element.addClass('animated');
+                            element.css('animation-name', animation);
+                            element.css('animation-duration', 'var(--animation-duration)');
+                            element.css('animation-fill-mode', 'forwards');
+                            element.css('animation-timing-function', 'ease-out');
+                        }, delay * 1000); // Convert delay to milliseconds
+                    }
+                });
+            }
+
+            // Initial check on load
+            animateOnScroll();
+
+            // Check on scroll
+            $(window).on('scroll', function() {
+                animateOnScroll();
+            });
+
+            // Parallax Effect
+            $(window).scroll(function() {
+                var scrolled = $(window).scrollTop();
+                $('.parallax-bg').css('transform', 'translateZ(-1px) scale(1.5) translateY(' + -(scrolled * 0.3) + 'px)');
+            });
+
+            // Counter Animation
+            function startCounters() {
+                $('.counter-item .count:not(.counted)').each(function() {
+                    var $this = $(this);
+                    if ($this.offset().top < $(window).scrollTop() + $(window).height() - 100) {
+                        $this.addClass('counted');
+                        $({ Counter: 0 }).animate({ Counter: $this.data('target') }, {
+                            duration: 2000,
+                            easing: 'swing',
+                            step: function() {
+                                $this.text(Math.ceil(this.Counter));
+                            }
+                        });
+                    }
+                });
+            }
+            // Initial check for counters
+            startCounters();
+            // Check counters on scroll
+            $(window).on('scroll', function() {
+                startCounters();
+            });
+
+            // Modal functionality
+            var modal = $('#reservationModal');
+            var btn = $('#openReservationModal');
+            var span = $('.close-button');
+
+            btn.on('click', function() {
+                modal.css('display', 'flex');
+            });
+
+            span.on('click', function() {
+                modal.css('display', 'none');
+            });
+
+            $(window).on('click', function(event) {
+                if ($(event.target).is(modal)) {
+                    modal.css('display', 'none');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
